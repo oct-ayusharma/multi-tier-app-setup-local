@@ -36,7 +36,10 @@ config.vm.define "rmq01" do |rmq01|
     rmq01.vm.hostname = "rmq01"
     rmq01.vm.network "private_network", ip: "192.168.2.16"
     rmq01.vm.provider "virtual_box" do |vb|
+        vb.name = "rmq01"
         vb.memory = "256"
+        vb.cpus = "1"
+        vb.customize ["modifyvm", :id, "--description", "Vprofile Rabbit MQ Server"]
     end
 end
 
