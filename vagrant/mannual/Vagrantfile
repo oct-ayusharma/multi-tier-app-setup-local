@@ -14,4 +14,14 @@ config.vm.define "db01" do |db01|
     end
 end
 
+## Memcached VM ##
+config.vm.define "mc01" do |mc01|
+    mc01.vm.box = "generic/centos9s"
+    mc01.vm.hostname = "mc01"
+    mc01.vm.network "private_network",  ip: "192.168.2.15"
+    mc01.vm.provider "virtualbox" do |vb|
+        vb.memory = "256"
+    end
+end
+
 end
